@@ -1,0 +1,57 @@
+address: 1503 Eastern Coastal Lane|addressLine1:1503 Eastern Coastal Lane|selectedState:CA|state:CA|city:Santa Rosa|postalCode:95404
+
+const tempaddressArray = addresstemp.split('|');
+for(let i=0;i<tempaddressArray.length;i++)
+{
+    tempaddressArray[i] = tempaddressArray[i].split(':');
+}
+var tryKeyValue = {
+}
+tryKeyValue[''+tempaddressArray[0][0]] = tempaddressArray[0][1]
+tryKeyValue[''+tempaddressArray[0][0]] = tempaddressArray[0][1]
+tryKeyValue[''+tempaddressArray[0][0]] = tempaddressArray[0][1]
+tryKeyValue[''+tempaddressArray[0][0]] = tempaddressArray[0][1]
+tryKeyValue[''+tempaddressArray[0][0]] = tempaddressArray[0][1]
+tryKeyValue[''+tempaddressArray[0][0]] = tempaddressArray[0][1]
+
+
+return tryKeyValue
+
+let addressLine1 = temp1.parent().parent().find(".selected-addressLine1");
+let addressLine2 = temp1.parent().parent().find(".selected-addressLine2");
+let state = temp1.parent().parent().find(".selected-state");
+let state = temp1.parent().parent().find(".select2-selection__rendered");
+state[0].title = "California"
+state[0].innerHTML = "California"
+
+let city = temp1.parent().parent().find(".selected-city");
+let postalCode = temp1.parent().parent().find(".selected-postalCode");
+
+
+
+
+
+
+
+"address_type": "Address Type",
+"home_address": "Home",
+      "mailing_address": "Mail",
+      "work_address": "Work",
+
+
+
+
+
+
+
+let state = temp1.parent().parent().find(".selected-state");
+undefined
+state[0].value = "CA"
+'CA'
+state[0].selectedIndex
+5
+let options = state[0].options
+undefined
+options[state[0].selectedIndex].text
+'California'
+

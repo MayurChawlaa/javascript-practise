@@ -1,0 +1,199 @@
+given//
+[1, 2, 3, [4, 5, [6]]]
+
+//expected//
+[1, 2, 3, 4, 5, 6]
+
+let x = [1, 2, 3, [4, 5, [6]]]
+let x = [1,[2],[3,4],[5,6,7]]
+let y = []
+
+//working
+function returnValuesOfObjects(objectx) {
+	for(i=0;i<objectx.length;i++)
+	{
+		if(typeof objectx[i] ==="object")
+		{
+			if(objectx[i].length === 1 )
+			{
+				console.log(...objectx[i]);
+                y.push(...objectx[i]);
+			}
+			else
+			returnValuesOfObjects(objectx[i]);
+			//console.log(...objectx);
+		}
+		else {
+			console.log(objectx[i]);
+            y.push(objectx[i]);
+        }
+	}
+}
+
+
+
+
+
+
+
+
+
+function returnValuesOfObjects(objectx) {
+	for(i=0;i<objectx.length;i++)
+	{
+		if(typeof objectx[i] ==="object")
+		{
+			if(objectx[i].length === 1 )
+			{
+				console.log(...objectx[i]);
+                y.push(...objectx[i]);
+                x.splice(x.indexOf(objectx[i]),1);
+			}
+			else
+			returnValuesOfObjects(objectx[i]);
+			//console.log(...objectx);
+		}
+		else {
+			console.log(objectx[i]);
+            y.push(objectx[i]);
+            x.splice(x.indexOf(objectx[i]),1);
+		}
+	}
+}
+
+
+function returnValuesOfObjects(objectx) {
+	for(i=0;i<objectx.length;i++)
+	{
+		if(typeof objectx[i] ==="object")
+		{
+			if(objectx[i].length === 1 )
+			{
+				console.log(...objectx[i]);
+                y.push(...objectx[i]);
+                x.pop();
+			}
+			else
+			returnValuesOfObjects(objectx[i]);
+			//console.log(...objectx);
+		}
+		else {
+			console.log(objectx[i]);
+            y.push(objectx[i]);
+            x.pop();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+function returnValuesOfObjects(objectx) {
+	for(i=0;i<objectx.length;i++)
+	{
+		if(typeof objectx[i] ==="object")
+		{
+			if(objectx[i].length === 1 )
+			{
+				console.log(...objectx[i]);
+			}
+			else
+			returnValuesOfObjects(objectx[i]);
+			//console.log(...objectx);
+		}
+		else {
+			console.log(objectx[i]);
+            y.push(objectx[i]);
+            x.splice()
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+function returnValuesOfObjects(objectx) {
+	
+	for(i=0;i<objectx.length;i++)
+	{
+		if(typeof objectx[i] ==="object")
+		{
+			if(objectx[i].length === 1 )
+			{
+				console.log(...objectx[i]);
+			}
+			else
+			returnValuesOfObjects(objectx[i]);
+			//console.log(...objectx);
+		}
+		else {
+			console.log(objectx[i]);
+		}
+	}
+}
+
+
+
+
+returnValuesOfObjects(x)
+
+
+
+
+
+
+
+for(i=0;i<x.length;i++)
+{
+	typeof x[i]==="object" ? returnValuesOfObjects(x[i]) : console.log(x[i]);
+}
+
+
+
+
+
+
+
+
+
+
+
+function returnValuesOfObjects(objectx) {
+	typeof objectx ==="object" ? console.log(...objectx) :  returnValuesOfObjects(objectx);
+}
+
+for(i=0;i<x.length;i++)
+{
+	typeof x[i]==="object" ? console.log(...x[i]) : console.log(x[i]);
+}
+
+
+
+
+
+
+function returnValuesOfObjects(objectx) {
+	typeof (objectx) [i]==="object" ? returnValuesOfObjects(x[i]) : console.log(...{x[i]});
+}
+
+for(i=0;i<x.length;i++)
+{
+    //console.log(typeof x[i]);
+
+	typeof x[i]==="object" ? returnValuesOfObjects(x[i]) : console.log(typeof x[i]);
+    if(typeof x[i]==="object")
+	{
+		//console.log("true");
+		returnValuesOfObjects(x[i])
+	}
+}

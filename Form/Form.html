@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: verdana;
+            margin: 0px;
+        }
+
+        .form-wrapper {
+            margin: 10px;
+        }
+
+        .form-wrapper label {
+            display: block;
+            font-size: 14px;
+        }
+
+        .form-wrapper input[type=text],
+        .form-wrapper input[type=email] {
+            margin-bottom: 5px;
+            width: 180px;
+            height: 20px;
+            border: 1px solid #eeeeee;
+        }
+
+        .form-wrapper span {
+            color: #ee0000;
+        }
+
+        .form-wrapper input[type=submit] {
+            display: block;
+            margin-top: 5px;
+            border: 0px;
+            background: #ee0000;
+            color: #ffffff;
+            height: 30px;
+            border-radius: 5px;
+        }
+
+        .form-wrapper input[type=submit]:hover {
+            background: #ee0022;
+        }
+
+        .form-wrapper textarea {
+            border: 1px solid #eeeeee;
+        }
+
+        .response_msg {
+            margin-top: 10px;
+            font-size: 13px;
+            background: #E5D669;
+            color: #ffffff;
+            width: 250px;
+            padding: 3px;
+            display: none;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-wrapper">
+        <h2>jQuery Form validation example without plugin</h2>
+        <form name="contact-form" action="" method="post" id="contact-form">
+            <label>Name <span>*</span></label>
+            <input type="text" name="your_name" id="name">
+            <label>Email <span>*</span></label>
+            <input type="text" name="your_email" id="email">
+            <label>Phone <span>*</span></label>
+            <input type="text" name="your_phone" id="phone">
+            <input type="submit" name="submit" value="Submit" id="submitForm">
+        </form>
+
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+        function checkName(inputID) {
+            console.log(inputID);
+            if ($(inputID).val() == "" || /\d/.test($(inputID).val())) {
+                console.log("Empty or Invalid Name");
+                $(inputID).css("border", "1px solid red");
+            }
+            else {
+                console.log("Good Name");
+                $(inputID).css("border", "1px solid green");
+            }
+        }
+        function checkEmail(inputID) {
+            console.log(inputID);
+            let reg_exp = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+            if (!reg_exp.test($(inputID).val())) {
+                console.log("Wrong Email");
+                $(inputID).css("border", "1px solid red");
+            }
+            else {
+                console.log("Correct Email");
+                $(inputID).css("border", "1px solid green");
+            }
+        }
+        function checkPhone(inputID) {
+            console.log(inputID);
+            if ($(inputID).val().length != 10 || !/\d/.test($(inputID).val())) {
+                console.log("length is not 10 or Not a Number " + $(inputID).val().length);
+                $(inputID).css("border", "1px solid red");
+            }
+            else {
+                console.log("Good Number");
+                $(inputID).css("border", "1px solid green");
+            }
+        }
+        $("#submitForm").click(function (e) {
+            e.preventDefault();
+            console.log("Submit");
+            checkName("#name");
+            checkEmail("#email");
+            checkPhone("#phone")
+        })
+    </script>
+</body>
+
+</html>
