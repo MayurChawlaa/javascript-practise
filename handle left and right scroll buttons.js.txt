@@ -1,0 +1,31 @@
+function determineScrollButtons() {
+  setTimeout(function () {
+    var availableScrollLeft = $("#popularquery")[0].scrollWidth - $("#popularquery")[0].clientWidth;
+    var doneScrollLeft = Math.round($("#popularquery").scrollLeft());
+    console.log("done",doneScrollLeft);
+    console.log("available",availableScrollLeft);
+    if(doneScrollLeft === 0){
+      //hide left button
+      //$("#leftarrow_div").hide();
+      $('#leftarrow_div').animate(
+        { height: 'toggle', opacity: 'toggle'}
+      );
+      //show right button
+      $("#rightarrow_div").show();
+    }
+    else if(availableScrollLeft - doneScrollLeft <= 5){
+      //hide right button
+      //$("#rightarrow_div").hide();
+      $('#rightarrow_div').animate(
+        { height: 'toggle', opacity: 'toggle'}
+      );
+      //show left button
+      $("#leftarrow_div").show();
+    }
+    else {
+      //show both buttons
+      $("#leftarrow_div").show();
+      $("#rightarrow_div").show();
+    }
+  }, 500);
+}

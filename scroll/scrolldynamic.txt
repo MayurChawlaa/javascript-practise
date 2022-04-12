@@ -1,0 +1,35 @@
+function determineScrollButtons() {
+  setTimeout(function () {
+    var availableScrollLeft = $("#popularquery")[0].scrollWidth - $("#popularquery")[0].clientWidth;
+    var doneScrollLeft = Math.round($("#popularquery").scrollLeft());
+    if($("#popularquery").is(":visible"))
+    {
+      if(doneScrollLeft === 0){
+        //hide left button
+        $('#leftarrow_div').hide();
+        //show right button
+        $("#rightarrow_div").show('slow');
+      }
+      else if(availableScrollLeft - doneScrollLeft <= 5){
+        //hide right button
+        $('#rightarrow_div').hide();
+        //show left button
+        $("#leftarrow_div").show('slow');
+      }
+      else {
+        //show both buttons if popularquery is visible
+        if($("#popularquery").is(":visible"))
+        {
+          if($("#leftarrow_div").is(":visible"))
+          {
+            $("#rightarrow_div").show('slow');
+          }
+          else if($("#rightarrow_div").is(":visible"))
+          {
+            $("#leftarrow_div").show('slow');
+          }
+        }
+      }
+    }
+  }, 500);
+}
